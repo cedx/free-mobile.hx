@@ -1,0 +1,4 @@
+--define php-lib=php
+--define real-position
+--php lib
+share/build.hxml

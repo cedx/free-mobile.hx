@@ -1,0 +1,3 @@
+--define js-es=6
+--js lib/js/free_mobile.js
+share/build.hxml

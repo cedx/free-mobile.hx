@@ -1,0 +1,3 @@
+--neko var/tests.n
+share/test.hxml
+--cmd neko var/tests.n

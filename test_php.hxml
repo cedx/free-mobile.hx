@@ -1,0 +1,5 @@
+--define php-lib=php
+--define real-position
+--php lib
+share/test.hxml
+--cmd php lib/index.php

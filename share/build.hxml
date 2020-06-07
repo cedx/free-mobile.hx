@@ -1,0 +1,4 @@
+--class-path src
+--define analyzer-optimize
+--library thenshim
+free_mobile.Client
