@@ -1,0 +1,12 @@
+{
+	"classPath": "src/",
+	"contributors": ["cedx"],
+	"dependencies": {"thenshim": "1.1.0"},
+	"description": "Send SMS messages to your Free Mobile device. A simple and free way to monitor your applications using a Free Mobile account.",
+	"license": "MIT",
+	"name": "free_mobile",
+	"releasenote": "Initial release.",
+	"tags": ["cross", "find", "path", "system", "utility", "which"],
+	"url": "https://docs.belin.io/free-mobile.hx",
+	"version": "1.0.0"
+}

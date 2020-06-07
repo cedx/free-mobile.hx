@@ -1,0 +1,48 @@
+{
+	"bugs": "https://git.belin.io/cedx/free-mobile.hx/issues",
+	"description": "Send SMS messages to your Free Mobile device. A simple and free way to monitor your applications using a Free Mobile account.",
+	"homepage": "https://docs.belin.io/free-mobile.hx",
+	"license": "MIT",
+	"main": "./lib/js/index.js",
+	"name": "@cedx/free-mobile.hx",
+	"type": "commonjs",
+	"types": "./lib/js/index.d.ts",
+	"version": "1.0.0",
+	"author": {
+		"email": "cedric@belin.io",
+		"name": "Cédric Belin",
+		"url": "https://belin.io"
+	},
+	"devDependencies": {
+		"@cedx/coveralls": "^10.1.0"
+	},
+	"engines": {
+		"node": ">=14.4.0"
+	},
+	"exports": {
+		"import": "./lib/js/index.mjs",
+		"require": "./lib/js/index.js"
+	},
+	"files": [
+		"lib/js/"
+	],
+	"funding": {
+		"type": "patreon",
+		"url": "https://www.patreon.com/cedx"
+	},
+	"keywords": [
+		"find",
+		"path",
+		"system",
+		"utility",
+		"which"
+	],
+	"repository": {
+		"type": "git",
+		"url": "https://git.belin.io/cedx/free-mobile.hx.git"
+	},
+	"scripts": {
+		"coverage": "coveralls var/lcov.info",
+		"prepack": "pwsh tool/dist.ps1"
+	}
+}
