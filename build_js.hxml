@@ -1,3 +1,4 @@
 --define js-es=6
 --js lib/js/free_mobile.js
+--library hxnodejs
 share/build.hxml
