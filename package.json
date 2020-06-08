@@ -13,6 +13,9 @@
 		"name": "Cédric Belin",
 		"url": "https://belin.io"
 	},
+	"dependencies": {
+		"node-fetch": "^2.6.0"
+	},
 	"devDependencies": {
 		"@cedx/coveralls": "^10.1.0"
 	},
