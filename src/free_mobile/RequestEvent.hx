@@ -9,9 +9,13 @@ class RequestEvent {
 	/** The event name. **/
 	public final name: String;
 
+	/** The URL of the HTTP request. **/
+	public final url: String;
+
 	/** Creates a new request event. **/
-	public function new(name: String, client: Client) {
+	public function new(name: String, client: Client, url: String) {
 		this.client = client;
 		this.name = name;
+		this.url = url;
 	}
 }

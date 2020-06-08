@@ -14,7 +14,7 @@ haxelib run dox `
 	--input-path var `
 	--output-path doc/api `
 	--title "FreeMobile.hx" `
-	--toplevel-package which
+	--toplevel-package free_mobile
 
 Copy-Item doc/img/favicon.ico doc/api
 mkdocs build --config-file=etc/mkdocs.yaml

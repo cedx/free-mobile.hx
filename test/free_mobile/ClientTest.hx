@@ -19,7 +19,7 @@ class ClientTest extends Test {
 	function testSendMessage(async: Async) {
 		// It should reject if a network error occurred.
 		var client = new Client("anonymous", "secret", "http://localhost:10000");
-		async.branch(branch -> client.sendMessage("Bonjour Cédric !")
+		async.branch(branch -> client.sendMessage("Hello World!")
 			.then(_ -> {
 				Assert.fail("Exception not thrown");
 				branch.done();
@@ -30,14 +30,16 @@ class ClientTest extends Test {
 			}));
 
 		// It should trigger events.
-		async.branch(branch -> {
-			// TODO !!!!!!
+		client = new Client(Sys.getEnv("FREEMOBILE_USERNAME"), Sys.getEnv("FREEMOBILE_PASSWORD"));
+		async.branch(branch -> client.onRequest = function(event) {
+			Assert.equals(client, event.client);
+			Assert.equals("request", event.name);
+			Assert.equals('${client.endPoint}/sendmsg', event.url);
 			branch.done();
 		});
 
 		// It should send SMS messages if credentials are valid.
-		client = new Client(Sys.getEnv("FREEMOBILE_USERNAME"), Sys.getEnv("FREEMOBILE_PASSWORD"));
-		async.branch(branch -> client.sendMessage("Bonjour Cédric, à partir de Node.js !")
+		async.branch(branch -> client.sendMessage("Bonjour Cédric, à partir de Haxe !")
 			.then(_ -> {
 				Assert.pass();
 				branch.done();
