@@ -7,7 +7,7 @@ haxe build_doc.hxml
 haxelib run dox `
 	--define description "Send SMS messages to your Free Mobile device. A simple and free way to monitor your applications using a Free Mobile account." `
 	--define logo "https://api.belin.io/free-mobile.hx/favicon.ico" `
-	--define source-path "https://git.belin.io/cedx/free-mobile.hx/src/branch/master/src" `
+	--define source-path "https://git.belin.io/cedx/free-mobile.hx/src/branch/main/src" `
 	--define themeColor 0xffc105 `
 	--define version $version `
 	--define website "https://belin.io" `
