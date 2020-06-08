@@ -1,5 +1,6 @@
 package free_mobile;
 
+import haxe.Exception;
 import haxe.io.Path;
 import thenshim.Promise;
 
@@ -24,8 +25,12 @@ import haxe.Http;
 	/** The user name associated to the account. **/
 	public final username: String;
 
-	/** Creates a new client. **/
+	/**
+		Creates a new client.
+		Throws an `Exception` if the account credentials are invalid.
+	**/
 	public function new(username: String, password: String, endPoint = "https://smsapi.free-mobile.fr") {
+		if (username.length == 0 || password.length == 0) throw new Exception("The account credentials are invalid.");
 		this.endPoint = Path.removeTrailingSlashes(endPoint);
 		this.password = password;
 		this.username = username;
