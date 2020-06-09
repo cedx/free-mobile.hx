@@ -1,5 +1,5 @@
 <?php declare(strict_types=1);
-use free_mobile\{Client, ClientException};
+use free_mobile\{Client};
 
 /** Sends an SMS notification. */
 function main(): void {
@@ -7,7 +7,7 @@ function main(): void {
 	// For example: new Client("12345678", "a9BkVohJun4MAf")
 
 	$client->sendMessage("Hello World from PHP!")->then(
-		fn() => print("The message was sent successfully."),
-		fn($error) => print("An error occurred: $error")
+		fn() => print "The message was sent successfully.",
+		fn($error) => print "An error occurred: $error"
 	);
 }
