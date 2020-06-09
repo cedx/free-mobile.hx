@@ -45,11 +45,11 @@ class Client {
 
 	/**
 	 * Creates a new client.
-	 *
+	 * 
 	 * @param string $username
 	 * @param string $password
 	 * @param string $endPoint
-	 *
+	 * 
 	 * @return void
 	 */
 	public function __construct ($username, $password, $endPoint = "https://smsapi.free-mobile.fr") {
@@ -71,9 +71,9 @@ class Client {
 
 	/**
 	 * The handler of "request" events.
-	 *
+	 * 
 	 * @param RequestEvent $event
-	 *
+	 * 
 	 * @return void
 	 */
 	public function onRequest ($event)
@@ -84,9 +84,9 @@ class Client {
 
 	/**
 	 * The handler of "response" events.
-	 *
+	 * 
 	 * @param RequestEvent $event
-	 *
+	 * 
 	 * @return void
 	 */
 	public function onResponse ($event)
@@ -97,9 +97,9 @@ class Client {
 
 	/**
 	 * Sends a SMS message to the underlying account.
-	 *
+	 * 
 	 * @param string $text
-	 *
+	 * 
 	 * @return Thenable
 	 */
 	public function sendMessage ($text) {
