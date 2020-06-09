@@ -1,6 +1,6 @@
 package free_mobile;
 
-/** Represents the event parameter used for request events. */
+/** Represents the event parameter used for request events. **/
 class RequestEvent {
 
 	/** The client which initiated the request. **/

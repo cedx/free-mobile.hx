@@ -62,7 +62,7 @@ import haxe.Http;
 			http.addParameter("pass", password);
 			http.addParameter("user", username);
 
-			return new Promise((resolve, reject) -> {
+			return new Promise<Any>((resolve, reject) -> {
 				onRequest(new RequestEvent("request", this, url));
 				http.onBytes = bytes -> { onResponse(new RequestEvent("response", this, url)); resolve(null); };
 				http.onError = error -> reject(new ClientException(error, http.url));
