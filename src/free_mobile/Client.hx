@@ -50,12 +50,13 @@ import haxe.Http;
 			query.append("user", username);
 
 			onRequest(new RequestEvent("request", this, url));
-			return Fetch.fetch('$url?$query')
-				.then(response -> {
+			return Fetch.fetch('$url?$query').then(
+				response -> {
 					onResponse(new RequestEvent("response", this, url));
 					response.ok ? null : throw new Exception("An error occurred while querying the end point.", url);
-				})
-				.catchError(error -> throw new ClientException(Std.string(error), url));
+				},
+				error -> throw new ClientException(Std.string(error), url)
+			);
 		#else
 			final http = new Http(url);
 			http.addParameter("msg", message);

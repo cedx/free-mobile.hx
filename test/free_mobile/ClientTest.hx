@@ -15,8 +15,7 @@ class ClientTest extends Test {
 		// It should reject if a network error occurred.
 		var client = new Client("anonymous", "secret", "http://localhost:10000");
 		async.branch(branch -> client.sendMessage("Hello World!")
-			.then(_ -> Assert.fail("Exception not thrown"))
-			.catchError(e -> Assert.isTrue(Std.isOfType(e, ClientException)))
+			.then(_ -> Assert.fail("Exception not thrown"), e -> Assert.isTrue(Std.isOfType(e, ClientException)))
 			.finally(() -> branch.done()));
 
 		// It should emit events.
@@ -29,9 +28,8 @@ class ClientTest extends Test {
 		});
 
 		// It should resolve if the message is sent.
-		async.branch(branch -> client.sendMessage('Bonjour Cédric, à partir de "${CompilerTarget.getName()}" !')
-			.then(_ -> Assert.pass())
-			.catchError(e -> Assert.fail(Std.string(e)))
+		async.branch(branch -> client.sendMessage('Bonjour Cédric, à partir de Haxe/${CompilerTarget.getName()} !')
+			.then(_ -> Assert.pass(), e -> Assert.fail(Std.string(e)))
 			.finally(() -> branch.done()));
 	}
 }
