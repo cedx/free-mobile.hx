@@ -13,7 +13,7 @@ import js.html.URLSearchParams;
 import haxe.Http;
 #end
 
-/** Sends messages by SMS to a [Free Mobile](http://mobile.free.fr) account. **/
+/** Sends messages by SMS to a [Free Mobile](https://mobile.free.fr) account. **/
 @:expose class Client {
 
 	/** The URL of the API end point. **/
