@@ -28,7 +28,7 @@ class ClientTest extends Test {
 		});
 
 		// It should resolve if the message is sent.
-		async.branch(branch -> client.sendMessage('Bonjour Cédric, à partir de Haxe/${CompilerTarget.getName()} !')
+		async.branch(branch -> client.sendMessage('Bonjour Cédric, à partir de Haxe/${Target.getName()} !')
 			.then(_ -> Assert.pass(), e -> Assert.fail(Std.string(e)))
 			.finally(() -> branch.done()));
 	}

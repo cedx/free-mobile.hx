@@ -1,8 +1,8 @@
 import haxe.macro.Context;
 import haxe.macro.Expr.ExprOf;
 
-/** Provides informations about the compiler target. **/
-class CompilerTarget {
+/** Provides information about the compiler target. **/
+class Target {
 
 	/** Gets the name of the current target. **/
 	macro public static function getName(): ExprOf<String>
