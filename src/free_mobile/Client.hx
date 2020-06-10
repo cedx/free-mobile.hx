@@ -32,11 +32,17 @@ import haxe.Http;
 		this.username = username;
 	}
 
-	/** The handler of "request" events. **/
-	public dynamic function onRequest(event: RequestEvent) {}
+	/**
+		The handler of "request" events.
+		The intended usage is to bind this method to a custom function.
+	**/
+	public dynamic function onRequest() {}
 
-	/** The handler of "response" events. **/
-	public dynamic function onResponse(event: RequestEvent) {}
+	/**
+		The handler of "response" events.
+		The intended usage is to bind this method to a custom function.
+	**/
+	public dynamic function onResponse() {}
 
 	/** Sends a SMS message to the underlying account. **/
 	public function sendMessage(text: String): Promise<Any> {
@@ -49,10 +55,10 @@ import haxe.Http;
 			query.append("pass", password);
 			query.append("user", username);
 
-			onRequest(new RequestEvent("request", this, url));
+			onRequest();
 			return Fetch.fetch('$url?$query').then(
 				response -> {
-					onResponse(new RequestEvent("response", this, url));
+					onResponse();
 					response.ok ? null : throw new Exception("An error occurred while querying the end point.", url);
 				},
 				error -> throw new ClientException(Std.string(error), url)
@@ -64,8 +70,8 @@ import haxe.Http;
 			http.addParameter("user", username);
 
 			return new Promise<Any>((resolve, reject) -> {
-				onRequest(new RequestEvent("request", this, url));
-				http.onBytes = bytes -> { onResponse(new RequestEvent("response", this, url)); resolve(null); };
+				onRequest();
+				http.onBytes = bytes -> { onResponse(); resolve(null); };
 				http.onError = error -> reject(new ClientException(error, http.url));
 				http.request(false);
 			});
