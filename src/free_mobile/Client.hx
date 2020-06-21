@@ -7,8 +7,8 @@ using StringTools;
 
 #if nodejs
 import haxe.Exception;
-import fetch.Fetch;
 import js.html.URLSearchParams;
+import js.npm.fetch.Fetch;
 #else
 import haxe.Http;
 #end
@@ -45,7 +45,7 @@ import haxe.Http;
 	public dynamic function onResponse() {}
 
 	/** Sends a SMS message to the underlying account. **/
-	public function sendMessage(text: String): Promise<Any> {
+	public function sendMessage(text: String): Promise<Dynamic> {
 		final message = text.trim().substring(0, 160);
 		final url = '$endPoint/sendmsg';
 
@@ -69,7 +69,7 @@ import haxe.Http;
 			http.addParameter("pass", password);
 			http.addParameter("user", username);
 
-			return new Promise<Any>((resolve, reject) -> {
+			return new Promise<Dynamic>((resolve, reject) -> {
 				onRequest();
 				http.onBytes = bytes -> { onResponse(); resolve(null); };
 				http.onError = error -> reject(new ClientException(error, http.url));

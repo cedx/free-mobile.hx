@@ -20,10 +20,8 @@ class ClientTest extends Test {
 
 		// It should emit events.
 		client = new Client(Sys.getEnv("FREEMOBILE_USERNAME"), Sys.getEnv("FREEMOBILE_PASSWORD"));
-		async.branch(branch -> client.onRequest = event -> {
-			Assert.equals(client, event.client);
-			Assert.equals("request", event.name);
-			Assert.equals('${client.endPoint}/sendmsg', event.url);
+		async.branch(branch -> client.onRequest = () -> {
+			Assert.pass();
 			branch.done();
 		});
 

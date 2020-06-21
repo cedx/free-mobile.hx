@@ -1,4 +1,4 @@
-package fetch;
+package js.npm.fetch;
 
 #if nodejs
 import haxe.extern.EitherType;
@@ -13,6 +13,6 @@ extern class Fetch {
 
 	/** Fetches the resource corresponding to the specified `request`. **/
 	@:selfCall
-	public static function fetch(request: EitherType<String, Request>, ?options: RequestInit): Promise<Response>;
+	static function fetch(request: EitherType<String, Request>, ?options: RequestInit): Promise<Response>;
 }
 #end
