@@ -1,9 +1,7 @@
 name: build
 on:
-  pull_request:
-  push:
-  schedule:
-    - cron: "0 0 1 * *"
+  - pull_request
+  - push
 jobs:
   eval:
     runs-on: ubuntu-latest
@@ -11,7 +9,7 @@ jobs:
       - name: Set up Haxe
         uses: krdlab/setup-haxe@v1
         with:
-          haxe-version: 4.1.1
+          haxe-version: 4.1.4
       - name: Check environment
         run: |
           haxe --version
@@ -31,7 +29,7 @@ jobs:
       - name: Set up Haxe
         uses: krdlab/setup-haxe@v1
         with:
-          haxe-version: 4.1.1
+          haxe-version: 4.1.4
       - name: Set up Node.js
         uses: actions/setup-node@v1
         with:
@@ -45,7 +43,7 @@ jobs:
       - name: Install dependencies
         run: |
           haxelib install all --always
-          npm install --ignore-scripts
+          npm install
       - name: Run tests
         env:
           FREEMOBILE_PASSWORD: ${{secrets.FREEMOBILE_PASSWORD}}
@@ -56,31 +54,13 @@ jobs:
           COVERALLS_REPO_TOKEN: ${{secrets.GITHUB_TOKEN}}
         if: success()
         run: npm run coverage
-  neko:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Set up Haxe
-        uses: krdlab/setup-haxe@v1
-        with:
-          haxe-version: 4.1.1
-      - name: Check environment
-        run: neko -version
-      - name: Fetch sources
-        uses: actions/checkout@v2
-      - name: Install dependencies
-        run: haxelib install all --always
-      - name: Run tests
-        env:
-          FREEMOBILE_PASSWORD: ${{secrets.FREEMOBILE_PASSWORD}}
-          FREEMOBILE_USERNAME: ${{secrets.FREEMOBILE_USERNAME}}
-        run: haxe test_neko.hxml
   php:
     runs-on: ubuntu-latest
     steps:
       - name: Set up Haxe
         uses: krdlab/setup-haxe@v1
         with:
-          haxe-version: 4.1.1
+          haxe-version: 4.1.4
       - name: Set up PHP
         uses: shivammathur/setup-php@v2
         with:
