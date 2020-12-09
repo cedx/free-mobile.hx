@@ -4,7 +4,7 @@ on:
   - push
 jobs:
   eval:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     steps:
       - name: Set up Haxe
         uses: krdlab/setup-haxe@v1
@@ -24,14 +24,14 @@ jobs:
           FREEMOBILE_USERNAME: ${{secrets.FREEMOBILE_USERNAME}}
         run: haxe test_eval.hxml
   js:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     steps:
       - name: Set up Haxe
         uses: krdlab/setup-haxe@v1
         with:
           haxe-version: 4.1.4
       - name: Set up Node.js
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v2
         with:
           node-version: 14
       - name: Check environment
@@ -55,7 +55,7 @@ jobs:
         if: success()
         run: npm run coverage
   php:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     steps:
       - name: Set up Haxe
         uses: krdlab/setup-haxe@v1
