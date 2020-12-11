@@ -2,8 +2,11 @@
 Set-StrictMode -Version Latest
 Set-Location (Split-Path $PSScriptRoot)
 
-composer update --no-interaction
 haxelib install all --always
 haxelib update --always
-npm install --ignore-scripts --production=false
+haxelib set hxjava 3.2.0 --always
+haxelib set tink_core 1.27.1 --always
+
+composer update --no-interaction
+npm install --production=false
 npm update --dev

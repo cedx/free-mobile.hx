@@ -2,8 +2,8 @@
 Set-StrictMode -Version Latest
 Set-Location (Split-Path $PSScriptRoot)
 
-foreach ($item in ".temp", "doc/api", "lib/index.php", "lib/js/which.*", "lib/php", "lib/res", "www") {
+foreach ($item in "docs/api", "lib/index.php", "lib/js/bundle.*", "lib/php", "lib/res") {
 	if (Test-Path $item) { Remove-Item $item -Force -Recurse }
 }
 
-Get-ChildItem var -Exclude .gitkeep | Remove-Item -Recurse
+Remove-Item var/* -Exclude .gitkeep -Force -Recurse
