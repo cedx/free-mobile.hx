@@ -18,15 +18,20 @@
 		{"type": "patreon", "url": "https://www.patreon.com/cedx"}
 	],
 	"keywords": [
-		"find",
-		"path",
-		"system",
-		"utility",
-		"which"
+		"client",
+		"free",
+		"mobile",
+		"sms"
 	],
 	"require": {
-		"php": ">=7.4.0",
-		"cedx/haxe": "^1.1.0"
+		"php": ">=8.0.0",
+		"cedx/haxe": "^1.7.0"
+	},
+	"require-dev": {
+		"cedx/coveralls": "^14.0.0"
+	},
+	"scripts": {
+		"coverage": "coveralls var/lcov.info"
 	},
 	"support": {
 		"docs": "https://api.belin.io/free-mobile.hx",
