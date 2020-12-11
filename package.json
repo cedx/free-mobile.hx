@@ -6,21 +6,17 @@
 	"main": "./lib/js/index.js",
 	"name": "@cedx/free-mobile.hx",
 	"type": "commonjs",
-	"types": "./lib/js/index.d.ts",
 	"version": "1.0.0",
 	"author": {
 		"email": "cedric@belin.io",
 		"name": "Cédric Belin",
 		"url": "https://belin.io"
 	},
-	"dependencies": {
-		"node-fetch": "^2.6.0"
-	},
 	"devDependencies": {
 		"@cedx/coveralls": "^10.1.0"
 	},
 	"engines": {
-		"node": ">=14.5.0"
+		"node": ">=14.15.0"
 	},
 	"exports": {
 		"import": "./lib/js/index.mjs",
@@ -34,11 +30,10 @@
 		"url": "https://www.patreon.com/cedx"
 	},
 	"keywords": [
-		"find",
-		"path",
-		"system",
-		"utility",
-		"which"
+		"client",
+		"free",
+		"mobile",
+		"sms"
 	],
 	"repository": {
 		"type": "git",
