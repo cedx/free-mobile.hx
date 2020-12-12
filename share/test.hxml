@@ -4,6 +4,7 @@
 --library instrument:1.1.0
 --library tink_core:1.27.1
 --library tink_http:0.9.1
+--library tink_querystring:0.6.0
 --library tink_unittest:0.7.0
 --macro instrument.Instrumentation.coverage(['free_mobile'], ['src'])
 --main TestAll

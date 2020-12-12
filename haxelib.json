@@ -1,7 +1,7 @@
 {
 	"classPath": "src/",
 	"contributors": ["cedx"],
-	"dependencies": {"tink_core": "1.27.1", "tink_http": "0.9.1"},
+	"dependencies": {"tink_core": "1.27.1", "tink_http": "0.9.1", "tink_querystring": "0.6.0"},
 	"description": "Send SMS messages to your Free Mobile device. A simple and free way to monitor your applications using a Free Mobile account.",
 	"license": "MIT",
 	"name": "free_mobile",
