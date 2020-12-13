@@ -92,7 +92,7 @@ class Client {
 			$e = Exception::caught($_g)->get_message();
 			return new SyncFuture(new LazyConst(Outcome::Failure(new TypedError(null, $e, new HxAnon([
 				"fileName" => "src/free_mobile/Client.hx",
-				"lineNumber" => 44,
+				"lineNumber" => 41,
 				"className" => "free_mobile.Client",
 				"methodName" => "sendMessage",
 			])))));

@@ -2,9 +2,6 @@ package free_mobile;
 
 import tink.QueryString;
 import tink.http.Client as Http;
-import tink.http.Fetch;
-import tink.http.Request;
-import tink.io.Source;
 
 using StringTools;
 using haxe.io.Path;

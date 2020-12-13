@@ -21,7 +21,7 @@ jobs:
         run: hl --version
       - name: Install dependencies
         run: |
-          haxelib install all --always
+          haxelib install test_hl.hxml --always
           haxelib set tink_core 1.27.1 --always
       - name: Run tests
         run: haxe test_hl.hxml
@@ -42,7 +42,7 @@ jobs:
         run: node --version
       - name: Install dependencies
         run: |
-          haxelib install all --always
+          haxelib install test_js.hxml --always
           haxelib set tink_core 1.27.1 --always
           npm install
       - name: Run tests
@@ -72,7 +72,7 @@ jobs:
         run: java --version
       - name: Install dependencies
         run: |
-          haxelib install all --always
+          haxelib install test_jvm.hxml --always
           haxelib set hxjava 3.2.0 --always
           haxelib set tink_core 1.27.1 --always
       - name: Run tests
@@ -96,7 +96,7 @@ jobs:
         run: php --version
       - name: Install dependencies
         run: |
-          haxelib install all --always
+          haxelib install test_php.hxml --always
           haxelib set tink_core 1.27.1 --always
           composer install --no-interaction
       - name: Run tests
