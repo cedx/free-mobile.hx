@@ -25,7 +25,7 @@
 	],
 	"require": {
 		"php": ">=8.0.0",
-		"cedx/haxe": "^1.7.0"
+		"cedx/haxe": "^1.8.0"
 	},
 	"require-dev": {
 		"cedx/coveralls": "^14.0.0"
