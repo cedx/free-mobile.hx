@@ -13,29 +13,18 @@ use \haxe\Exception;
  */
 class ClientException extends Exception {
 	/**
-	 * @var string
-	 * The URL of the HTTP request that failed.
-	 */
-	public $url;
-
-	/**
 	 * Creates a new client exception.
 	 * 
 	 * @param string $message
-	 * @param string $url
 	 * @param Exception $previous
 	 * 
 	 * @return void
 	 */
-	public function __construct ($message = "", $url = "", $previous = null) {
+	public function __construct ($message = "", $previous = null) {
 		if ($message === null) {
 			$message = "";
 		}
-		if ($url === null) {
-			$url = "";
-		}
 		parent::__construct($message, $previous);
-		$this->url = $url;
 	}
 }
 
