@@ -1,80 +1,46 @@
 package free_mobile;
 
-import haxe.io.Path;
-import thenshim.Promise;
+import tink.QueryString;
+import tink.http.Client as Http;
+import tink.http.Fetch;
+import tink.http.Request;
+import tink.io.Source;
 
 using StringTools;
-
-#if nodejs
-import haxe.Exception;
-import js.html.URLSearchParams;
-import js.npm.fetch.Fetch;
-#else
-import haxe.Http;
-#end
+using haxe.io.Path;
 
 /** Sends messages by SMS to a [Free Mobile](https://mobile.free.fr) account. **/
 @:expose class Client {
 
 	/** The URL of the API end point. **/
-	public final endPoint: String;
+	final endPoint: String;
 
 	/** The identification key associated to the account. **/
-	public final password: String;
+	final password: String;
 
 	/** The user name associated to the account. **/
-	public final username: String;
+	final username: String;
 
 	/** Creates a new client. **/
 	public function new(username: String, password: String, endPoint = "https://smsapi.free-mobile.fr") {
-		this.endPoint = Path.removeTrailingSlashes(endPoint);
+		this.endPoint = endPoint.removeTrailingSlashes();
 		this.password = password;
 		this.username = username;
 	}
 
-	/**
-		The handler of "request" events.
-		The intended usage is to bind this method to a custom function.
-	**/
-	public dynamic function onRequest() {}
-
-	/**
-		The handler of "response" events.
-		The intended usage is to bind this method to a custom function.
-	**/
-	public dynamic function onResponse() {}
-
 	/** Sends a SMS message to the underlying account. **/
-	public function sendMessage(text: String): Promise<Dynamic> {
-		final message = text.trim().substring(0, 160);
-		final url = '$endPoint/sendmsg';
+	public function sendMessage(text: String): Promise<Noise> {
+		final url = '$endPoint/sendmsg?' + QueryString.build({
+			msg: text.trim().substring(0, 160),
+			pass: password,
+			user: username
+		});
 
-		#if nodejs
-			final query = new URLSearchParams();
-			query.append("msg", message);
-			query.append("pass", password);
-			query.append("user", username);
-
-			onRequest();
-			return Fetch.fetch('$url?$query').then(
-				response -> {
-					onResponse();
-					response.ok ? null : throw new Exception("An error occurred while querying the end point.", url);
-				},
-				error -> throw new ClientException(Std.string(error), url)
-			);
-		#else
-			final http = new Http(url);
-			http.addParameter("msg", message);
-			http.addParameter("pass", password);
-			http.addParameter("user", username);
-
-			return new Promise<Dynamic>((resolve, reject) -> {
-				onRequest();
-				http.onBytes = bytes -> { onResponse(); resolve(null); };
-				http.onError = error -> reject(new ClientException(error, http.url));
-				http.request(false);
-			});
-		#end
+		return try Http.fetch(url).map(outcome -> switch outcome {
+			case Success(_): Success(Noise);
+			case Failure(error): error.code == InternalError && ~/content-length header is required/i.match(error.message)
+				? Success(Noise)
+				: Failure(error);
+		}) catch (e) new Error(e.message);
 	}
 }

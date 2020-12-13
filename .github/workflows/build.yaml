@@ -3,26 +3,6 @@ on:
   - pull_request
   - push
 jobs:
-  eval:
-    runs-on: windows-latest
-    steps:
-      - name: Fetch sources
-        uses: actions/checkout@v2
-      - name: Set up Haxe
-        uses: krdlab/setup-haxe@v1
-        with:
-          haxe-version: 4.1.4
-      - name: Check environment
-        run: haxe --version
-      - name: Install dependencies
-        run: |
-          haxelib install all --always
-          haxelib set tink_core 1.27.1 --always
-      - name: Run tests
-        env:
-          FREEMOBILE_PASSWORD: ${{secrets.FREEMOBILE_PASSWORD}}
-          FREEMOBILE_USERNAME: ${{secrets.FREEMOBILE_USERNAME}}
-        run: haxe test_eval.hxml
   hl:
     runs-on: windows-latest
     steps:

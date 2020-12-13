@@ -1,28 +1,27 @@
 import free_mobile.*;
-import mcover.coverage.MCoverage;
-import mcover.coverage.client.LcovPrintClient;
-import utest.Runner;
-import utest.ui.Report;
+import instrument.coverage.Coverage;
+import tink.testrunner.Runner;
+import tink.unit.TestBatch;
 
-/** Runs the test suites. **/
+#if php
+import php.Const;
+import php.Global.error_reporting;
+#end
+
+/** Runs the test suite. **/
 class TestAll {
-
-	/** The test cases. **/
-	static final tests = [
-		new ClientTest()
-	];
 
 	/** Application entry point. **/
 	static function main() {
-		final runner = new Runner();
-		runner.onComplete.add(_ -> {
-			final logger = MCoverage.getLogger();
-			logger.addClient(new LcovPrintClient("free_mobile", "var/lcov.info"));
-			logger.report();
-		});
+		#if php if (Const.PHP_VERSION_ID >= 80000) error_reporting(Const.E_ALL & ~Const.E_DEPRECATED); #end
 
-		Report.create(runner);
-		for (test in tests) runner.addCase(test);
-		runner.run();
+		final tests = TestBatch.make([
+			new ClientTest()
+		]);
+
+		Runner.run(tests).handle(outcome -> {
+			Coverage.endCoverage();
+			Runner.exit(outcome);
+		});
 	}
 }

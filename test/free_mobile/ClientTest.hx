@@ -1,33 +1,32 @@
 package free_mobile;
 
-import utest.Assert;
-import utest.Async;
-import utest.Test;
-
-using thenshim.PromiseTools;
-
 /** Tests the features of the `Client` class. **/
-class ClientTest extends Test {
+@:asserts class ClientTest {
 
-	/** Tests the `sendMessage()` method. **/
-	@:timeout(5000)
-	function testSendMessage(async: Async) {
-		// It should reject if a network error occurred.
-		var client = new Client("anonymous", "secret", "http://localhost:10000");
-		async.branch(branch -> client.sendMessage("Hello World!")
-			.then(_ -> Assert.fail("Exception not thrown"), e -> Assert.isTrue(Std.isOfType(e, ClientException)))
-			.finally(() -> branch.done()));
+	/** Creates a new test. **/
+	public function new() {}
 
-		// It should emit events.
-		client = new Client(Sys.getEnv("FREEMOBILE_USERNAME"), Sys.getEnv("FREEMOBILE_PASSWORD"));
-		async.branch(branch -> client.onRequest = () -> {
-			Assert.pass();
-			branch.done();
+	/** Tests the `sendMessage()` method, when a failure occurs. **/
+	@:timeout(15000)
+	public function testFailure() {
+		final client = new Client("anonymous", "secret", "http://localhost:10000");
+		client.sendMessage("Hello World!").handle(outcome -> switch outcome {
+			case Success(_): asserts.fail("Promise not rejected.");
+			case Failure(error): { asserts.assert(error.code == InternalError); asserts.done(); }
 		});
 
-		// It should resolve if the message is sent.
-		async.branch(branch -> client.sendMessage('Bonjour Cédric, à partir de Haxe/${Target.getName()} !')
-			.then(_ -> Assert.pass(), e -> Assert.fail(Std.string(e)))
-			.finally(() -> branch.done()));
+		return asserts;
+	}
+
+	/** Tests the `sendMessage()` method, when a success occurs. **/
+	@:timeout(15000)
+	public function testSuccess() {
+		final client = new Client(Sys.getEnv("FREEMOBILE_USERNAME"), Sys.getEnv("FREEMOBILE_PASSWORD"));
+		client.sendMessage('Hello Cédric, from Haxe/${Version.getHaxeTarget().toUpperCase()} !').handle(outcome -> switch outcome {
+			case Success(data): { asserts.assert(data == Noise); asserts.done(); }
+			case Failure(error): asserts.fail(error.message);
+		});
+
+		return asserts;
 	}
 }

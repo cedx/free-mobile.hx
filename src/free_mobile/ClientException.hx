@@ -8,7 +8,7 @@ import haxe.Exception;
 	/** The URL of the HTTP request that failed. **/
 	public final url: String;
 
-	/** Creates a new LCOV exception. **/
+	/** Creates a new client exception. **/
 	public function new(message = "", url = "", ?previous: Exception) {
 		super(message, previous);
 		this.url = url;
