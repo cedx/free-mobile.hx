@@ -22,7 +22,7 @@ package free_mobile;
 	@:timeout(15000)
 	public function testSuccess() {
 		final client = new Client(Sys.getEnv("FREEMOBILE_USERNAME"), Sys.getEnv("FREEMOBILE_PASSWORD"));
-		client.sendMessage('Hello Cédric, from Haxe/${Version.getHaxeTarget().toUpperCase()} !').handle(outcome -> switch outcome {
+		client.sendMessage('Hello Cédric, from Haxe/${Version.getHaxeTarget()}!').handle(outcome -> switch outcome {
 			case Success(data): { asserts.assert(data == Noise); asserts.done(); }
 			case Failure(error): asserts.fail(error.message);
 		});

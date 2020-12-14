@@ -1,5 +1,5 @@
 <?php declare(strict_types=1);
-namespace free_mobile\php;
+namespace free_mobile\http;
 
 /** Sends messages by SMS to a [Free Mobile](https://mobile.free.fr) account. */
 class Client {

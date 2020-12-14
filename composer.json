@@ -10,7 +10,10 @@
 	],
 	"autoload": {
 		"files": ["lib/php/adapter.php"],
-		"psr-4": {"free_mobile\\": "lib/php/free_mobile/"}
+		"psr-4": {
+			"free_mobile\\": "lib/php/free_mobile/",
+			"tink\\querystring\\": "lib/php/tink/querystring/"
+		}
 	},
 	"config": {
 		"optimize-autoloader": true
@@ -26,7 +29,7 @@
 	],
 	"require": {
 		"php": ">=8.0.0",
-		"cedx/haxe": "^1.8.0"
+		"cedx/haxe": "^1.8.1"
 	},
 	"require-dev": {
 		"cedx/coveralls": "^14.0.0"

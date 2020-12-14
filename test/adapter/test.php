@@ -1,5 +1,5 @@
 <?php declare(strict_types=1);
-use free_mobile\php\{Client, ClientException};
+use free_mobile\http\{Client, ClientException};
 
 require_once __DIR__."/../../vendor/autoload.php";
 
@@ -18,7 +18,7 @@ function main(): void {
 
 	// It should send an SMS if all goes well.
 	$client = new Client(getenv("FREEMOBILE_USERNAME"), getenv("FREEMOBILE_PASSWORD"));
-	return $client->sendMessage("Hello World from PHP!");
+	$client->sendMessage("Hello World from PHP!");
 }
 
 // Run the test.

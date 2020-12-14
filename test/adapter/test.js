@@ -13,7 +13,7 @@ async function main() {
 	// It should throw an exception if an error occurred.
 	try {
 		client = new Client("anonymous", "secret", "http://localhost:10000");
-		await client.sendMessage("Hello World from JavaScript/CJS!");
+		await client.sendMessage("Hello World from JS/cjs!");
 		assert("Exception not thrown.");
 	}
 
@@ -23,7 +23,7 @@ async function main() {
 
 	// It should send an SMS if all goes well.
 	client = new Client(process.env.FREEMOBILE_USERNAME, process.env.FREEMOBILE_PASSWORD);
-	return client.sendMessage("Hello World from JavaScript/CJS!");
+	return client.sendMessage("Hello World from JS/cjs!");
 }
 
 // Run the test.
