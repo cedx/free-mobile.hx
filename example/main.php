@@ -1,5 +1,5 @@
 <?php declare(strict_types=1);
-use free_mobile\Client;
+use free_mobile\php\{Client, ClientException};
 
 /** Sends an SMS notification. */
 function main(): void {
