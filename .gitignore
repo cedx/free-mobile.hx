@@ -1,18 +1,12 @@
-/.*/
-!/.github/
-!/.vscode/
-
 /build/
-/docs/api/
 /node_modules/
+/lib/res/
 /var/
 /vendor/
-/www/
 
 /*.code-workspace
 /*.iml
 /**/.DS_Store
 /composer.lock
 /npm-debug.log
-/package-lock.json
 /lib/js/bundle.*
