@@ -1,5 +1,4 @@
 --jvm var/tests.jar
---library hxjava:3.2.0
---library tink_chunk:git:https://github.com/haxetink/tink_chunk.git
+--library hxjava
 share/test.hxml
 --cmd java -jar var/tests.jar

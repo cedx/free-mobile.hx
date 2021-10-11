@@ -1,0 +1,9 @@
+--class-path src
+--define analyzer-optimize
+--define no-deprecation-warnings
+--hl var/build.hl
+--library tink_http
+--library tink_querystring
+--library tink_url
+
+free_mobile.Client
