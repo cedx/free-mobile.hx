@@ -1,12 +1,12 @@
 {
 	"classPath": "src/",
 	"contributors": ["cedx"],
-	"dependencies": {"tink_core": "1.27.1", "tink_http": "0.9.1", "tink_querystring": "0.6.0"},
+	"dependencies": {"tink_http": "", "tink_querystring": ""},
 	"description": "Send SMS messages to your Free Mobile device. A simple and free way to monitor your applications using a Free Mobile account.",
 	"license": "MIT",
 	"name": "free_mobile",
 	"releasenote": "Initial release.",
 	"tags": ["client", "cross", "free", "mobile", "sms", "tink"],
-	"url": "https://docs.belin.io/free-mobile.hx",
+	"url": "https://cedx.github.io/free-mobile.hx",
 	"version": "1.0.0"
 }
