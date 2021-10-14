@@ -1,5 +1,8 @@
 package free_mobile;
 
+import tink.core.Error.ErrorCode;
+using AssertionTools;
+
 /** Tests the features of the `Client` class. **/
 @:asserts class ClientTest {
 
@@ -8,25 +11,24 @@ package free_mobile;
 
 	/** Tests the `sendMessage()` method, when a failure occurs. **/
 	@:timeout(15000)
-	public function testFailure() {
-		final client = new Client("anonymous", "secret", "http://localhost:10000");
-		client.sendMessage("Hello World!").handle(outcome -> switch outcome {
-			case Success(_): asserts.fail("Promise not rejected.");
-			case Failure(error): { asserts.assert(error.code == InternalError); asserts.done(); }
-		});
-
+	@:variant("http://localhost:10000", InternalError)
+	@:variant("https://smsapi.free-mobile.fr", Forbidden)
+	public function testFailure(input: String, output: ErrorCode) {
+		final client = new Client("anonymous", "secret", input);
+		asserts.rejects(client.sendMessage("Hello World!"), output).handle(asserts.handle);
 		return asserts;
 	}
 
 	/** Tests the `sendMessage()` method, when a success occurs. **/
+	/*
 	@:timeout(15000)
 	public function testSuccess() {
-		final client = new Client(Sys.getEnv("FREEMOBILE_USERNAME"), Sys.getEnv("FREEMOBILE_PASSWORD"));
+		final client = new Client(Sys.getEnv("FREEMOBILE_ACCOUNT"), Sys.getEnv("FREEMOBILE_API_KEY"));
 		client.sendMessage('Hello Cédric, from Haxe/${Version.getHaxeTarget()}!').handle(outcome -> switch outcome {
 			case Success(data): { asserts.assert(data == Noise); asserts.done(); }
 			case Failure(error): asserts.fail(error.message);
 		});
 
 		return asserts;
-	}
+	}*/
 }
