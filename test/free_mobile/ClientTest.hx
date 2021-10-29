@@ -20,15 +20,13 @@ using AssertionTools;
 	}
 
 	/** Tests the `sendMessage()` method, when a success occurs. **/
-	/*
 	@:timeout(15000)
 	public function testSuccess() {
 		final client = new Client(Sys.getEnv("FREEMOBILE_ACCOUNT"), Sys.getEnv("FREEMOBILE_API_KEY"));
-		client.sendMessage('Hello Cédric, from Haxe/${Version.getHaxeTarget()}!').handle(outcome -> switch outcome {
-			case Success(data): { asserts.assert(data == Noise); asserts.done(); }
-			case Failure(error): asserts.fail(error.message);
-		});
+		client.sendMessage('Hello Cédric, from Haxe/${Version.getHaxeTarget()}!')
+			.next(response -> asserts.assert(response == Noise))
+			.handle(asserts.handle);
 
 		return asserts;
-	}*/
+	}
 }
