@@ -3,6 +3,7 @@ package free_mobile;
 import tink.QueryString;
 import tink.Url;
 import tink.http.Client as HttpClient;
+import tink.http.Response.IncomingResponse;
 
 using StringTools;
 using haxe.io.Path;
@@ -34,20 +35,9 @@ class Client {
 			user: account
 		});
 
-		return HttpClient.fetch(baseUrl.resolve('sendmsg?$queryString')).noise();
-
-		/* TODO
-		.map(outcome -> {
-			trace(outcome);
-			switch outcome {
-				case Success(_): Success(Noise);
-				case Failure(error): error.code == InternalError && ~/content-length header is required/i.match(error.message)
-						? Success(Noise)
-						: Failure(error);
-			}
-		}) catch (e) {
-			trace(e);
-			new Error(e.message);
-		}*/
+		return HttpClient
+			.fetch(baseUrl.resolve('sendmsg?$queryString'))
+			.next(IncomingResponse.readAll)
+			.noise();
 	}
 }
