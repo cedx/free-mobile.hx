@@ -21,6 +21,6 @@ function main() {
 The `Client.sendMessage()` method returns a `Promise` that resolves when the message has been sent.
 
 The promise rejects with a `Forbidden` error when the submitted credentials are invalid.
-It also rejects with an `InternalError` if any error occurred while sending the message.
+It rejects with an `InternalError` if any error occurred while sending the message.
 
 !> The text of the messages will be automatically truncated to **160** characters: you can't send multipart messages using this library.
