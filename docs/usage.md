@@ -1,6 +1,4 @@
 # Usage
-
-## SMS notifications
 **Free Mobile for Haxe** provides the `Client` class, which allow to send SMS messages to your mobile phone by using the `sendMessage()` method:
 
 ```haxe
