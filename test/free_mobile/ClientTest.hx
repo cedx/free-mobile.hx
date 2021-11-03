@@ -23,10 +23,7 @@ using AssertionTools;
 	@:timeout(15000)
 	public function testSuccess() {
 		final client = new Client(Sys.getEnv("FREEMOBILE_ACCOUNT"), Sys.getEnv("FREEMOBILE_API_KEY"));
-		client.sendMessage('Hello Cédric, from Haxe/${Version.getHaxeTarget()}!')
-			.next(response -> asserts.assert(true, "Promise should resolve."))
-			.handle(asserts.handle);
-
+		asserts.doesNotReject(client.sendMessage('Hello Cédric, from Haxe/${Version.getHaxeTarget()}!')).handle(asserts.handle);
 		return asserts;
 	}
 }
