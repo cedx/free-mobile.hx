@@ -9,10 +9,7 @@ jobs:
       - name: Set up Lix
         uses: lix-pm/setup-lix@master
       - name: Set up HashLink
-        run: |
-          Invoke-WebRequest https://github.com/HaxeFoundation/hashlink/releases/download/1.11/hl-1.11.0-win.zip -OutFile var/hashlink.zip
-          Expand-Archive var/hashlink.zip var/hashlink
-          Add-Content $Env:GITHUB_PATH (Resolve-Path var/hashlink/hl-1.11.0-win) -NoNewline
+        uses: cedx/setup-hashlink@main
       - name: Install dependencies
         run: lix download
       - name: Run tests
