@@ -17,14 +17,25 @@ jobs:
           FREEMOBILE_ACCOUNT: ${{secrets.FREEMOBILE_ACCOUNT}}
           FREEMOBILE_API_KEY: ${{secrets.FREEMOBILE_API_KEY}}
         run: haxe test_hl.hxml
-      - name: Collect code coverage
-        if: success()
-        uses: coverallsapp/github-action@master
+  java:
+    runs-on: windows-latest
+    steps:
+      - name: Fetch sources
+        uses: actions/checkout@v2
+      - name: Set up Lix
+        uses: lix-pm/setup-lix@master
+      - name: Set up Java
+        uses: actions/setup-java@v2
         with:
-          flag-name: HashLink
-          github-token: ${{secrets.GITHUB_TOKEN}}
-          parallel: true
-          path-to-lcov: var/lcov.info
+          distribution: temurin
+          java-version: 16
+      - name: Install dependencies
+        run: lix download
+      - name: Run tests
+        env:
+          FREEMOBILE_ACCOUNT: ${{secrets.FREEMOBILE_ACCOUNT}}
+          FREEMOBILE_API_KEY: ${{secrets.FREEMOBILE_API_KEY}}
+        run: haxe test_java.hxml
   js:
     runs-on: windows-latest
     steps:
@@ -43,41 +54,6 @@ jobs:
           FREEMOBILE_ACCOUNT: ${{secrets.FREEMOBILE_ACCOUNT}}
           FREEMOBILE_API_KEY: ${{secrets.FREEMOBILE_API_KEY}}
         run: haxe test_js.hxml
-      - name: Collect code coverage
-        if: success()
-        uses: coverallsapp/github-action@master
-        with:
-          flag-name: JavaScript
-          github-token: ${{secrets.GITHUB_TOKEN}}
-          parallel: true
-          path-to-lcov: var/lcov.info
-  jvm:
-    runs-on: windows-latest
-    steps:
-      - name: Fetch sources
-        uses: actions/checkout@v2
-      - name: Set up Lix
-        uses: lix-pm/setup-lix@master
-      - name: Set up Java
-        uses: actions/setup-java@v2
-        with:
-          distribution: temurin
-          java-version: 17
-      - name: Install dependencies
-        run: lix download
-      - name: Run tests
-        env:
-          FREEMOBILE_ACCOUNT: ${{secrets.FREEMOBILE_ACCOUNT}}
-          FREEMOBILE_API_KEY: ${{secrets.FREEMOBILE_API_KEY}}
-        run: haxe test_jvm.hxml
-      - name: Collect code coverage
-        if: success()
-        uses: coverallsapp/github-action@master
-        with:
-          flag-name: Java
-          github-token: ${{secrets.GITHUB_TOKEN}}
-          parallel: true
-          path-to-lcov: var/lcov.info
   php:
     runs-on: windows-latest
     steps:
@@ -88,7 +64,7 @@ jobs:
       - name: Set up PHP
         uses: shivammathur/setup-php@v2
         with:
-          php-version: 8.0
+          php-version: 7.4
           extensions: curl, intl, mbstring, simplexml, sockets
       - name: Install dependencies
         run: lix download
@@ -97,20 +73,3 @@ jobs:
           FREEMOBILE_ACCOUNT: ${{secrets.FREEMOBILE_ACCOUNT}}
           FREEMOBILE_API_KEY: ${{secrets.FREEMOBILE_API_KEY}}
         run: haxe test_php.hxml
-      - name: Collect code coverage
-        if: success()
-        uses: coverallsapp/github-action@master
-        with:
-          flag-name: PHP
-          github-token: ${{secrets.GITHUB_TOKEN}}
-          parallel: true
-          path-to-lcov: var/lcov.info
-  coverage:
-    runs-on: windows-latest
-    needs: [hl, js, jvm, php]
-    steps:
-      - name: Finish code coverage
-        uses: coverallsapp/github-action@master
-        with:
-          github-token: ${{secrets.GITHUB_TOKEN}}
-          parallel-finished: true
