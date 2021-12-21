@@ -1,6 +1,7 @@
+//! --class-path src
 import Sys.*;
 import Tools.removeDirectory;
-import haxe.Json;
+import free_mobile.Version.*;
 import sys.FileSystem.*;
 import sys.io.File.*;
 
@@ -14,7 +15,7 @@ function main() {
 		"--define", "description", "Send SMS messages to your Free Mobile device, in Haxe.",
 		"--define", "source-path", "https://bitbucket.org/cedx/free-mobile.hx/src/main/src",
 		"--define", "themeColor", "0xffc105",
-		"--define", "version", Json.parse(getContent("haxelib.json")).version,
+		"--define", "version", packageVersion,
 		"--define", "website", "https://bitbucket.org/cedx/free-mobile.hx",
 		"--input-path", "var",
 		"--output-path", "docs",

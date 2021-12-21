@@ -7,6 +7,7 @@ import tink.http.Response.IncomingResponse;
 
 using StringTools;
 using haxe.io.Path;
+using tink.CoreApi;
 
 /** Sends messages by SMS to a [Free Mobile](https://mobile.free.fr) account. **/
 class Client {
@@ -28,7 +29,7 @@ class Client {
 	}
 
 	/** Sends a SMS message to the underlying account. **/
-	public function sendMessage(text: String): Promise<Noise> {
+	public function sendMessage(text: String) {
 		final queryString = QueryString.build({
 			msg: text.trim().substring(0, 160),
 			pass: apiKey,
