@@ -1,11 +1,17 @@
 import instrument.coverage.Coverage;
+import tink.testrunner.Reporter.AnsiFormatter;
+import tink.testrunner.Reporter.BasicReporter;
 import tink.testrunner.Runner;
 import tink.unit.TestBatch;
 
 /** Runs the test suite. **/
 function main() {
-	final tests = TestBatch.make([new free_mobile.ClientTest()]);
-	Runner.run(tests).handle(outcome -> {
+	final tests = TestBatch.make([
+		new free_mobile.ClientTest()
+	]);
+
+	ANSI.stripIfUnavailable = false;
+	Runner.run(tests, new BasicReporter(new AnsiFormatter())).handle(outcome -> {
 		Coverage.endCoverage();
 		Runner.exit(outcome);
 	});
