@@ -1,6 +1,6 @@
 //! --class-path src
 import Sys.*;
-import Tools.removeDirectory;
+import Tools;
 import free_mobile.Version.*;
 import sys.FileSystem.*;
 import sys.io.File.*;
