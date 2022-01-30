@@ -4,7 +4,6 @@ import tink.QueryString;
 import tink.Url;
 import tink.http.Client as HttpClient;
 import tink.http.Response.IncomingResponse;
-
 using StringTools;
 using haxe.io.Path;
 using tink.CoreApi;

@@ -1,13 +1,12 @@
 //! --class-path src
 import Sys.*;
-import Tools;
 import free_mobile.Version.*;
 import sys.FileSystem.*;
 import sys.io.File.*;
 
 /** Runs the script. **/
 function main() {
-	if (exists("docs")) removeDirectory("docs");
+	if (exists("docs")) Tools.removeDirectory("docs");
 
 	command("haxe --define doc-gen --no-output --xml var/api.xml build.hxml");
 	command("lix", [
