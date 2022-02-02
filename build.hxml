@@ -1,7 +1,7 @@
 --class-path src
 --define analyzer-optimize
 --define no-deprecation-warnings
---hl var/build.hl
+--js var/build.js
 --library tink_http
 --library tink_querystring
 --library tink_url
