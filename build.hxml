@@ -2,8 +2,6 @@
 --define analyzer-optimize
 --define no-deprecation-warnings
 --js var/build.js
---library tink_http
---library tink_querystring
---library tink_url
+--library tink_web
 
 free_mobile.Client
