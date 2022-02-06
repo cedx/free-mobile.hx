@@ -1,12 +1,10 @@
 package free_mobile;
 
-import tink.QueryString;
 import tink.Url;
-import tink.http.Client as HttpClient;
-import tink.http.Response.IncomingResponse;
+import tink.Web;
+import tink.web.proxy.Remote;
 using StringTools;
 using haxe.io.Path;
-using tink.CoreApi;
 
 /** Sends messages by SMS to a [Free Mobile](https://mobile.free.fr) account. **/
 class Client {
@@ -20,24 +18,21 @@ class Client {
 	/** The base URL of the remote API endpoint. **/
 	public final baseUrl: Url = "https://smsapi.free-mobile.fr/";
 
+	/** The remote API client. **/
+	final remote: Remote<RemoteApi>;
+
 	/** Creates a new client. **/
 	public function new(account: String, apiKey: String, ?baseUrl: Url) {
 		this.account = account;
 		this.apiKey = apiKey;
 		if (baseUrl != null) this.baseUrl = Path.addTrailingSlash(baseUrl);
+		remote = Web.connect((this.baseUrl: RemoteApi));
 	}
 
 	/** Sends a SMS message to the underlying account. **/
-	public function sendMessage(text: String) {
-		final queryString = QueryString.build({
-			msg: text.trim().substring(0, 160),
-			pass: apiKey,
-			user: account
-		});
-
-		return HttpClient
-			.fetch(baseUrl.resolve('sendmsg?$queryString'))
-			.next(IncomingResponse.readAll)
-			.noise();
-	}
+	public function sendMessage(text: String) return remote.sendmsg({
+		user: account,
+		pass: apiKey,
+		msg: text.trim().substring(0, 160)
+	});
 }
