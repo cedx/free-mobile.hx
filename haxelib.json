@@ -5,7 +5,7 @@
 	"description": "Send SMS messages to your Free Mobile device.",
 	"license": "MIT",
 	"name": "free_mobile",
-	"releasenote": "Updated the documentation, updated the project URL.",
+	"releasenote": "Replaced the HTTP client by Tinkerbell Web remoting, updated the package dependencies.",
 	"tags": ["api", "client", "cross", "free", "mobile", "sms", "tink"],
 	"url": "https://bitbucket.org/cedx/free-mobile.hx",
 	"version": "1.1.0"
