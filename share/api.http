@@ -4,7 +4,7 @@
 
 ###
 
-// Returns the order list.
+// Sends a SMS message to the specified Free Mobile account.
 GET {{baseUrl}}/sendmsg
 	?user={{account}}
 	&pass={{apiKey}}
