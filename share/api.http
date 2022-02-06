@@ -1,0 +1,13 @@
+@account = {{$processEnv FREEMOBILE_ACCOUNT}}
+@apiKey = {{$processEnv FREEMOBILE_API_KEY}}
+@baseUrl = https://smsapi.free-mobile.fr
+
+###
+
+// Returns the order list.
+GET {{baseUrl}}/sendmsg
+	?user={{account}}
+	&pass={{apiKey}}
+	&msg=Hello World!
+
+###
