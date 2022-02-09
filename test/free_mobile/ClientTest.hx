@@ -15,7 +15,7 @@ using AssertionTools;
 	@:variant("https://smsapi.free-mobile.fr", Forbidden)
 	public function testFailure(input: String, output: ErrorCode) {
 		final client = new Client("anonymous", "secret", input);
-		asserts.rejects(client.sendMessage("Hello World!"), output).handle(asserts.handle);
+		asserts.rejects(output, client.sendMessage("Hello World!")).handle(asserts.handle);
 		return asserts;
 	}
 
