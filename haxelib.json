@@ -8,5 +8,5 @@
 	"releasenote": "Replaced the HTTP client by Tinkerbell Web remoting, updated the package dependencies.",
 	"tags": ["api", "client", "cross", "free", "mobile", "sms", "tink"],
 	"url": "https://bitbucket.org/cedx/free-mobile.hx",
-	"version": "1.1.0"
+	"version": "1.1.1"
 }
