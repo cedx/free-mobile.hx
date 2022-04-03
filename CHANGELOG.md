@@ -1,5 +1,8 @@
 # Changelog
 
+## Version [1.1.1](https://bitbucket.org/cedx/free-mobile.hx/branches/compare/v1.1.1..v1.1.0)
+- Fixed the dependencies declared in the `haxelib.json` file.
+
 ## Version [1.1.0](https://bitbucket.org/cedx/free-mobile.hx/branches/compare/v1.1.0..v1.0.1)
 - Replaced the HTTP client by [Tinkerbell Web](https://haxetink.github.io/tink_web) remoting.
 - Updated the package dependencies.
