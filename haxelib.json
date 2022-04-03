@@ -1,7 +1,7 @@
 {
 	"classPath": "src/",
 	"contributors": ["cedx"],
-	"dependencies": {"tink_http": "", "tink_querystring": "", "tink_url": ""},
+	"dependencies": {"tink_web": ""},
 	"description": "Send SMS messages to your Free Mobile device.",
 	"license": "MIT",
 	"name": "free_mobile",
