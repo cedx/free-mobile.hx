@@ -11,10 +11,10 @@ function main() {
 	Sys.command("lix", [
 		"run", "dox",
 		"--define", "description", "Send SMS messages to your Free Mobile device, in Haxe.",
-		"--define", "source-path", "https://bitbucket.org/cedx/free-mobile.hx/src/main/src",
+		"--define", "source-path", "https://github.com/cedx/free-mobile.hx/blob/main/src",
 		"--define", "themeColor", "0xffc105",
 		"--define", "version", Version.packageVersion,
-		"--define", "website", "https://bitbucket.org/cedx/free-mobile.hx",
+		"--define", "website", "https://github.com/cedx/free-mobile.hx",
 		"--input-path", "var",
 		"--output-path", "docs",
 		"--title", "Free Mobile for Haxe",
