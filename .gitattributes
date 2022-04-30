@@ -1,10 +1,11 @@
 * text=auto
 .* text
 
+*.cjs text
 *.http text
 *.hx text
 *.hxml text
-*.info text
+*.js text
 *.json text
 *.md text
 *.txt text
