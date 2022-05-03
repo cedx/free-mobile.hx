@@ -3,5 +3,3 @@ GET {{baseUrl}}/sendmsg
 	?user={{$processEnv %account}}
 	&pass={{$processEnv %apiKey}}
 	&msg=Hello World!
-
-###
