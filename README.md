@@ -1,5 +1,5 @@
 # Free Mobile for Haxe
-![Haxe](https://badgen.net/badge/haxe/%3E%3D4.2.0/green) ![Haxelib](https://badgen.net/haxelib/v/free_mobile) ![License](https://badgen.net/haxelib/license/free_mobile) ![Downloads](https://badgen.net/haxelib/d/free_mobile) ![Coverage](https://badgen.net/coveralls/c/github/cedx/free-mobile.hx)
+![Haxe](https://badgen.net/badge/haxe/%3E%3D4.2.0/green) ![Haxelib](https://badgen.net/haxelib/v/free_mobile) ![License](https://badgen.net/haxelib/license/free_mobile) ![Downloads](https://badgen.net/haxelib/d/free_mobile) ![Coverage](https://badgen.net/codecov/c/github/cedx/free-mobile.hx)
 
 Send SMS messages to your [Free Mobile](https://mobile.free.fr) account, in [Haxe](https://haxe.org).
 
