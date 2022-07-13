@@ -25,7 +25,7 @@ jobs:
         run: haxe test_hl.hxml
       - name: Collect code coverage
         if: success()
-        uses: codecov/codecov-action@v2
+        uses: codecov/codecov-action@v3
         with:
           files: var/lcov.info
           flags: HashLink
@@ -57,7 +57,7 @@ jobs:
         run: haxe test_java.hxml
       - name: Collect code coverage
         if: success()
-        uses: codecov/codecov-action@v2
+        uses: codecov/codecov-action@v3
         with:
           files: var/lcov.info
           flags: Java
@@ -87,7 +87,7 @@ jobs:
         run: haxe test_js.hxml
       - name: Collect code coverage
         if: success()
-        uses: codecov/codecov-action@v2
+        uses: codecov/codecov-action@v3
         with:
           files: var/lcov.info
           flags: JavaScript
@@ -118,7 +118,7 @@ jobs:
         run: haxe test_php.hxml
       - name: Collect code coverage
         if: success()
-        uses: codecov/codecov-action@v2
+        uses: codecov/codecov-action@v3
         with:
           files: var/lcov.info
           flags: PHP
