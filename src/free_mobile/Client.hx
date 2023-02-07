@@ -7,7 +7,7 @@ using StringTools;
 using haxe.io.Path;
 
 /** Sends messages by SMS to a [Free Mobile](https://mobile.free.fr) account. **/
-class Client {
+final class Client {
 
 	/** The Free Mobile account. **/
 	public final account: String;

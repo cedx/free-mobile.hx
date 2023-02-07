@@ -4,7 +4,7 @@ import tink.core.Error.ErrorCode;
 using AssertionTools;
 
 /** Tests the features of the `Client` class. **/
-@:asserts class ClientTest {
+@:asserts final class ClientTest {
 
 	/** Creates a new test. **/
 	public function new() {}
