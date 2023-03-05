@@ -7,5 +7,5 @@
 --library instrument
 --library tink_unittest
 --library tink_web
---macro instrument.Instrumentation.coverage(['free_mobile'], ['src'])
+--macro instrument.Instrumentation.coverage(["free_mobile"], ["src"])
 --main RunTests
