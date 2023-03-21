@@ -7,7 +7,7 @@
 	"[markdown]": {"files.trimTrailingWhitespace": false},
 	"[yaml]": {"editor.insertSpaces": true},
 	"rest-client.environmentVariables": {
-		"development": {
+		"dev": {
 			"account": "FREEMOBILE_ACCOUNT",
 			"apiKey": "FREEMOBILE_API_KEY",
 			"baseUrl": "https://smsapi.free-mobile.fr"
