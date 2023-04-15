@@ -16,16 +16,17 @@ final class Client {
 	public final apiKey: String;
 
 	/** The base URL of the remote API endpoint. **/
-	public final baseUrl: Url = "https://smsapi.free-mobile.fr/";
+	public final baseUrl: Url;
 
 	/** The remote API client. **/
 	final remote: Remote<RemoteApi>;
 
 	/** Creates a new client. **/
+	@:ignoreInstrument
 	public function new(account: String, apiKey: String, ?baseUrl: Url) {
 		this.account = account;
 		this.apiKey = apiKey;
-		if (baseUrl != null) this.baseUrl = Path.addTrailingSlash(baseUrl);
+		this.baseUrl = Path.addTrailingSlash(baseUrl ?? "https://smsapi.free-mobile.fr");
 		remote = Web.connect((this.baseUrl: RemoteApi));
 	}
 
