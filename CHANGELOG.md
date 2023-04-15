@@ -1,5 +1,9 @@
 # Changelog
 
+## Version [1.2.0](https://github.com/cedx/free-mobile.hx/compare/v1.1.2...v1.2.0)
+- Updated the dependencies.
+- Use the null coalescing operator.
+
 ## Version [1.1.2](https://github.com/cedx/free-mobile.hx/compare/v1.1.1...v1.1.2)
 - Restored the [HashLink](https://hashlink.haxe.org) tests.
 - Updated the project URL.
