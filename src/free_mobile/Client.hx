@@ -22,7 +22,6 @@ final class Client {
 	final remote: Remote<RemoteApi>;
 
 	/** Creates a new client. **/
-	@:ignoreInstrument
 	public function new(account: String, apiKey: String, ?baseUrl: Url) {
 		this.account = account;
 		this.apiKey = apiKey;
