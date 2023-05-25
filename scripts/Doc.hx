@@ -13,7 +13,7 @@ function main() {
 		"--define", "source-path", "https://github.com/cedx/free-mobile.hx/blob/main/src",
 		"--define", "themeColor", "0xea8220",
 		"--define", "version", Version.packageVersion,
-		"--define", "website", "https://github.com/cedx/free-mobile.hx",
+		"--define", "website", "https://docs.belin.io/free-mobile.hx",
 		"--input-path", "var",
 		"--output-path", "docs",
 		"--title", "Free Mobile for Haxe",
