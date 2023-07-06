@@ -2,5 +2,5 @@
 --define js-global=global
 --js var/tests.js
 --library hxnodejs
-share/test.hxml
+share/build/test.hxml
 --cmd node var/tests.js
