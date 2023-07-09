@@ -1,5 +1,5 @@
 //! --class-path src --library tink_core
-import free_mobile.Version;
+import free_mobile.Platform;
 import sys.FileSystem;
 import sys.io.File;
 
@@ -12,7 +12,7 @@ function main() {
 		"--define", "description", "Send SMS messages to your Free Mobile device, in Haxe.",
 		"--define", "source-path", "https://github.com/cedx/free-mobile.hx/blob/main/src",
 		"--define", "themeColor", "0xea8220",
-		"--define", "version", Version.packageVersion,
+		"--define", "version", Platform.packageVersion,
 		"--define", "website", "https://docs.belin.io/free-mobile.hx",
 		"--input-path", "var",
 		"--output-path", "docs",
