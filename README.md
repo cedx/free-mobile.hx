@@ -4,8 +4,8 @@
 Send SMS messages to your [Free Mobile](https://mobile.free.fr) account, in [Haxe](https://haxe.org).
 
 ## Documentation
-- [User guide](https://github.com/cedx/free-mobile.hx/wiki)
-- [API reference](https://docs.belin.io/free-mobile.hx)
+- [User guide](https://docs.belin.io/free-mobile.hx)
+- [API reference](https://docs.belin.io/free-mobile.hx/api)
 
 ## Development
 - [Git repository](https://github.com/cedx/free-mobile.hx)
@@ -13,4 +13,4 @@ Send SMS messages to your [Free Mobile](https://mobile.free.fr) account, in [Hax
 - [Submit an issue](https://github.com/cedx/free-mobile.hx/issues)
 
 ## License
-[Free Mobile for Haxe](https://github.com/cedx/free-mobile.hx) is distributed under the MIT License.
+[Free Mobile for Haxe](https://docs.belin.io/free-mobile.hx) is distributed under the MIT License.

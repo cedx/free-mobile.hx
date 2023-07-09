@@ -5,7 +5,7 @@ import sys.io.File;
 
 /** Builds the documentation. **/
 function main() {
-	if (FileSystem.exists("docs")) Tools.removeDirectory("docs");
+	if (FileSystem.exists("docs/api")) Tools.removeDirectory("docs/api");
 
 	Sys.command("haxe --define doc-gen --no-output --xml var/api.xml build.hxml");
 	Sys.command("lix", ["run", "dox",
@@ -15,10 +15,10 @@ function main() {
 		"--define", "version", Platform.packageVersion,
 		"--define", "website", "https://docs.belin.io/free-mobile.hx",
 		"--input-path", "var",
-		"--output-path", "docs",
+		"--output-path", "docs/api",
 		"--title", "Free Mobile for Haxe",
 		"--toplevel-package", "free_mobile"
 	]);
 
-	File.copy("www/favicon.ico", "docs/favicon.ico");
+	File.copy("docs/favicon.ico", "docs/api/favicon.ico");
 }
