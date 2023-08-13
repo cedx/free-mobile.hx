@@ -10,7 +10,7 @@ For example, you can configure a control panel or storage connected to your home
 You first need to enable the **SMS notifications** in [your subscriber account](https://mobile.free.fr/account).
 This will give you an identification key allowing access to the [Free Mobile](https://mobile.free.fr) API.
 
-![Screenshot](screenshot.png)
+![Screenshot](screenshot.webp)
 
 ### Get the library
 Install the latest version of **Free Mobile for Haxe** with [lix](https://github.com/lix-pm/lix.client) package manager:
