@@ -8,5 +8,5 @@
 	"releasenote": "Updated the dependencies, use the null coalescing operator.",
 	"tags": ["api", "client", "cross", "free", "mobile", "sms", "tink"],
 	"url": "https://docs.belin.io/free-mobile.hx",
-	"version": "1.2.0"
+	"version": "1.2.1"
 }
