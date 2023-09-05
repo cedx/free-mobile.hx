@@ -5,7 +5,7 @@
 	"description": "Send SMS messages to your Free Mobile device.",
 	"license": "MIT",
 	"name": "free_mobile",
-	"releasenote": "Updated the dependencies, use the null coalescing operator.",
+	"releasenote": "Improved the compatibility with Haxe 4.3.2.",
 	"tags": ["api", "client", "cross", "free", "mobile", "sms", "tink"],
 	"url": "https://docs.belin.io/free-mobile.hx",
 	"version": "1.2.1"
