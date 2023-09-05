@@ -25,7 +25,7 @@ final class Client {
 	public function new(account: String, apiKey: String, ?baseUrl: Url) {
 		this.account = account;
 		this.apiKey = apiKey;
-		this.baseUrl = Path.addTrailingSlash(baseUrl ?? "https://smsapi.free-mobile.fr");
+		this.baseUrl = Path.addTrailingSlash(baseUrl != null ? baseUrl.toString() : "https://smsapi.free-mobile.fr");
 		remote = Web.connect((this.baseUrl: RemoteApi));
 	}
 
