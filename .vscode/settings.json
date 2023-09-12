@@ -10,7 +10,7 @@
 		"dev": {
 			"account": "FREEMOBILE_ACCOUNT",
 			"apiKey": "FREEMOBILE_API_KEY",
-			"baseUrl": "https://smsapi.free-mobile.fr"
+			"apiUrl": "https://smsapi.free-mobile.fr"
 		}
 	}
 }

@@ -1,4 +1,4 @@
 --jvm var/tests.jar
 --library hxjava
-share/build/test.hxml
+share/test.hxml
 --cmd java -jar var/tests.jar
