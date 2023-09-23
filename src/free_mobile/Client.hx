@@ -6,10 +6,6 @@ import tink.web.proxy.Remote;
 using StringTools;
 using haxe.io.Path;
 
-#if js
-import tink.http.clients.JsFetchClient;
-#end
-
 /** Sends messages by SMS to a [Free Mobile](https://mobile.free.fr) account. **/
 final class Client {
 
@@ -30,7 +26,7 @@ final class Client {
 		this.account = account;
 		this.apiKey = apiKey;
 		this.baseUrl = Path.addTrailingSlash(baseUrl != null ? baseUrl.toString() : "https://smsapi.free-mobile.fr");
-		remote = Web.connect((this.baseUrl: RemoteApi) #if js, {client: new JsFetchClient()} #end);
+		remote = Web.connect((this.baseUrl: RemoteApi));
 	}
 
 	/** Sends a SMS message to the underlying account. **/
