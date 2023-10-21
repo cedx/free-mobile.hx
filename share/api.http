@@ -1,4 +1,4 @@
-// Sends a SMS message to the specified Free Mobile account.
+### Sends a SMS message to the specified Free Mobile account.
 GET {{apiUrl}}/sendmsg
 	?user={{$processEnv FREEMOBILE_ACCOUNT}}
 	&pass={{$processEnv FREEMOBILE_API_KEY}}
