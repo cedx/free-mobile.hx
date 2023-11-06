@@ -33,6 +33,6 @@ final class Client {
 	public function sendMessage(text: String) return remote.sendmsg({
 		user: account,
 		pass: apiKey,
-		msg: text.trim().substring(0, 160)
+		msg: text.trim().substr(0, 160)
 	});
 }
