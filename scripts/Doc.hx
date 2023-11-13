@@ -15,7 +15,7 @@ function main() {
 		"--define", "source-path", "https://github.com/cedx/free-mobile.hx/blob/main/src",
 		"--define", "themeColor", "0xea8220",
 		"--define", "version", Platform.packageVersion,
-		"--define", "website", "https://docs.belin.io/free-mobile.hx",
+		"--define", "website", "https://cedx.github.io/free-mobile.hx",
 		"--input-path", "var",
 		"--output-path", "docs/api",
 		"--title", "Free Mobile for Haxe",
