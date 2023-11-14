@@ -13,4 +13,4 @@ Send SMS messages to your [Free Mobile](https://mobile.free.fr) account, in [Hax
 - [Submit an issue](https://github.com/cedx/free-mobile.hx/issues)
 
 ## License
-[Free Mobile for Haxe](https://cedx.github.io/free-mobile.hx) is distributed under the MIT License.
+[Free Mobile for Haxe](https://github.com/cedx/free-mobile.hx) is distributed under the MIT License.
