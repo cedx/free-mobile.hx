@@ -4,8 +4,6 @@
 --define analyzer-optimize
 --define coverage-lcov-reporter=var/lcov.info
 --define no-deprecation-warnings
---library instrument
 --library tink_unittest
 --library tink_web
---macro instrument.Instrumentation.coverage(["free_mobile"], ["src"])
 --main RunTests
