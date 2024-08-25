@@ -30,9 +30,6 @@ final class Client {
 	}
 
 	/** Sends a SMS message to the underlying account. **/
-	public function sendMessage(text: String) return remote.sendmsg({
-		user: account,
-		pass: apiKey,
-		msg: text.trim().substr(0, 160)
-	});
+	public function sendMessage(text: String): Promise<Noise>
+		return remote.sendmsg({user: account, pass: apiKey, msg: text.trim().substr(0, 160)});
 }
