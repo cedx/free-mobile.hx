@@ -1,7 +1,7 @@
 --class-path src
 --define analyzer-optimize
 --define js-es=6
---define js-global=global
+--define js-global=globalThis
 --define no-deprecation-warnings
 --js var/build.js
 --library tink_web
