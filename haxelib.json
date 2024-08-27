@@ -5,7 +5,7 @@
 	"description": "Send SMS messages to your Free Mobile device.",
 	"license": "MIT",
 	"name": "free_mobile",
-	"releasenote": "Improved the compatibility with Haxe 4.3.2.",
+	"releasenote": "Updated the package dependencies.",
 	"tags": ["api", "client", "cross", "free", "mobile", "sms", "tink"],
 	"url": "https://github.com/cedx/free-mobile.hx",
 	"version": "1.2.1"

@@ -1,10 +1,13 @@
 # Changelog
 
+## Version [1.3.0](https://github.com/cedx/free-mobile.hx/compare/v1.2.1...v1.3.0)
+- Updated the package dependencies.
+
 ## Version [1.2.1](https://github.com/cedx/free-mobile.hx/compare/v1.2.0...v1.2.1)
 - Improved the compatibility with [Haxe](https://haxe.org) 4.3.2.
 
 ## Version [1.2.0](https://github.com/cedx/free-mobile.hx/compare/v1.1.2...v1.2.0)
-- Updated the dependencies.
+- Updated the package dependencies.
 - Use the null coalescing operator.
 
 ## Version [1.1.2](https://github.com/cedx/free-mobile.hx/compare/v1.1.1...v1.1.2)
