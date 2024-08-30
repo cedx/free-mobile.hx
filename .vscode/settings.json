@@ -7,6 +7,10 @@
 	"[markdown]": {"files.trimTrailingWhitespace": false},
 	"[yaml]": {"editor.insertSpaces": true},
 	"rest-client.environmentVariables": {
-		"dev": {"apiUrl": "https://smsapi.free-mobile.fr"}
+		"development": {
+			"apiUrl": "https://smsapi.free-mobile.fr",
+			"password": "FREEMOBILE_API_KEY",
+			"username": "FREEMOBILE_ACCOUNT"
+		}
 	}
 }
