@@ -8,9 +8,7 @@
 	"[yaml]": {"editor.insertSpaces": true},
 	"rest-client.environmentVariables": {
 		"development": {
-			"apiUrl": "https://smsapi.free-mobile.fr",
-			"password": "FREEMOBILE_API_KEY",
-			"username": "FREEMOBILE_ACCOUNT"
+			"apiUrl": "https://smsapi.free-mobile.fr"
 		}
 	}
 }

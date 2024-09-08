@@ -1,5 +1,5 @@
 ### Sends a SMS message to the specified Free Mobile account.
 GET {{apiUrl}}/sendmsg?
-	user={{$processEnv %username}}
-	&pass={{$processEnv %password}}
+	user={{$processEnv FREEMOBILE_ACCOUNT}}
+	&pass={{$processEnv FREEMOBILE_API_KEY}}
 	&msg=Hello World!
