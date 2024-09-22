@@ -1,7 +1,6 @@
 package free_mobile;
 
 import tink.core.Error.ErrorCode;
-using AssertionTools;
 
 /** Tests the features of the `Client` class. **/
 @:asserts final class ClientTest {
