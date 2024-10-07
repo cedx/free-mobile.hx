@@ -5,10 +5,8 @@ import tink.unit.TestBatch;
 
 /** Runs the test suite. **/
 function main() {
-	final tests = TestBatch.make([
-		new free_mobile.ClientTest()
-	]);
-
 	ANSI.stripIfUnavailable = false;
-	Runner.run(tests, new BasicReporter(new AnsiFormatter())).handle(Runner.exit);
+	Runner
+		.run(TestBatch.make([new free_mobile.ClientTest()]), new BasicReporter(new AnsiFormatter()))
+		.handle(Runner.exit);
 }
